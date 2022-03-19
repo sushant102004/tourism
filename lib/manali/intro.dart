@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:tourism/manali/places.dart';
 
 class IntroManali extends StatelessWidget {
   const IntroManali({Key? key}) : super(key: key);
@@ -39,7 +40,10 @@ class IntroManali extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Places()));
+                  },
                   icon: const Icon(
                     Ionicons.compass_outline,
                     color: Colors.black,
