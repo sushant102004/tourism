@@ -24,7 +24,7 @@ class Places extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width,
             height: 170,
-            margin: EdgeInsets.all(10.0),
+            margin: const EdgeInsets.all(10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -37,50 +37,84 @@ class Places extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width - 150,
-                  height: 170,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Velyka Vasylkivska 132'),
-                          Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                color: Colors.black26),
-                            child: Icon(Icons.map_outlined),
+                SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width - 150,
+                    height: 170,
+                    child: Column(
+                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(top: 10),
+                          child: Text(
+                            'Velyka Vasylkivska 132 Velyka Vasylkivska 132',
+                            style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
                           ),
-                        ],
-                      ),
-                      Row(
-                        children: const [
-                          Icon(Icons.location_city),
-                          Text('Velyka Vasylkivska 132')
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.orange, // background
-                              // onPrimary: Colors.orange, // foreground
-                            ),
-                            onPressed: () {},
-                            child: const Text(
-                              'Navigate',
-                              style: TextStyle(color: Colors.black),
-                            ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 10),
+                          child: Icon(Icons.share),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8),
+                          child: Wrap(
+                            children: const [
+                              Text(
+                                  'Manu Temple Road Old Manali Dragon Galli, Manali Manu Temple Road Old Manali Dragon Galli, Manali',
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontSize: 14,
+                                  ))
+                            ],
                           ),
-                          Text('132'),
-                        ],
-                      ),
-                    ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Row(
+                            children: const [
+                              Text(
+                                "Price Range: ",
+                                style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "₹150 - ₹700",
+                                style: TextStyle(
+                                  fontFamily: "Poppins",
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 7),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.orange, // background
+                                  // onPrimary: Colors.orange, // foreground
+                                ),
+                                onPressed: () {},
+                                child: const Text(
+                                  'Navigate',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.call_outlined))
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
